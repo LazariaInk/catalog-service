@@ -1,7 +1,6 @@
 package com.fabricadecoduri.shop_online.model;
 
 import com.fabricadecoduri.shop_online.model.product_enum.Category;
-import com.fabricadecoduri.shop_online.model.product_enum.Gender;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -14,29 +13,23 @@ import lombok.Setter;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "product")
+@Table(name = "model")
 @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
-public class Product {
+public class Model {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    @Column(name = "quantity")
-    private int quantity;
+    @Column(name = "category")
+    private Category category;
 
-    @Column(name = "size")
-    private int size;
+    @Column(name = "name")
+    private String name;
 
-    @Column(name = "color")
-    private String color;
-
-    @Column(name = "price")
-    private Double price;
-
-    @Column(name = "gender")
-    private Gender gender;
+    @Column(name = "description")
+    private String description;
 
     @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "model_id", referencedColumnName = "id")
-    private Model model;
+    @JoinColumn(name = "brand_id", referencedColumnName = "id")
+    private Brand brand;
 }

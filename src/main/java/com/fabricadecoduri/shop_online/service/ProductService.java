@@ -13,28 +13,48 @@ public class ProductService {
     @Autowired
     private ProductRepository productRepository;
 
-    public Product getProductById(Long id){
-        return  productRepository.getReferenceById(id);
+    public Product getProductById(Long id) {
+        return productRepository.getReferenceById(id);
     }
 
-    public void createProduct(Product product){
+    public void addProduct(Product product) {
         productRepository.save(product);
     }
 
-    public void deleteProductById(Long id){
+    public void deleteProductById(Long id) {
         productRepository.deleteById(id);
     }
 
-    public List<Product> getAllProducts(){
+    public List<Product> getAllProducts() {
         return productRepository.findAll();
     }
 
-    public void editProductById( Long id, Product product){
-        Product productToId = productRepository.getReferenceById(id);
-        productToId.setBrand(product.getBrand());
-        productToId.setName(product.getName());
-        productToId.setPrice(product.getPrice());
-        productToId.setCategory(product.getCategory());
-        productToId.setQuantity(product.getQuantity());
+    public void editProductById(Product product, Long id) {
+        Product productForEdit = productRepository.getReferenceById(id);
+        productForEdit.setPrice(product.getPrice());
+        productForEdit.setQuantity(product.getQuantity());
+        productForEdit.setColor(product.getColor());
+        productForEdit.setGender(product.getGender());
+        productForEdit.setSize(product.getSize());
+        productForEdit.setModel(product.getModel());
+        productRepository.save(productForEdit);
+    }
+
+    public void addSpecificProduct(Long id, int quantity) {
+        Product productToAdd = productRepository.getReferenceById(id);
+        productToAdd.setQuantity(productToAdd.getQuantity() + quantity);
+        productRepository.save(productToAdd);
+    }
+
+    public double buyProduct(Long id, Product product, int quantity) {
+        if (product.getQuantity() - quantity > 0) {
+            Product productToBuy = productRepository.getReferenceById(id);
+            productToBuy.setQuantity(productToBuy.getQuantity() - quantity);
+            productRepository.save(productToBuy);
+            return product.getPrice() * quantity;
+        } else {
+            System.out.println("Out of stock");
+            return 0;
+        }
     }
 }
