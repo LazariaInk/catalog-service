@@ -8,11 +8,11 @@
 		<version>3.3.2</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.fabricadecoduri</groupId>
-	<artifactId>shop-online</artifactId>
+	<groupId>com.lazaria</groupId>
+	<artifactId>catalog-service</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>shop-online</name>
-	<description>Online shop back end part in spring boot for learning</description>
+	<name>catalog-service</name>
+	<description>Catalog service for online shop</description>
 	<url/>
 	<licenses>
 		<license/>

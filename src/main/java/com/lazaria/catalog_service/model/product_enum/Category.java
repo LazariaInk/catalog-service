@@ -1,4 +1,4 @@
-package com.fabricadecoduri.shop_online.model.product_enum;
+package com.lazaria.catalog_service.model.product_enum;
 
 public enum Category {
     T_SHIRTS,

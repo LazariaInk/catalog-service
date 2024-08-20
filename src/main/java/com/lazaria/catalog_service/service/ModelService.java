@@ -1,7 +1,7 @@
-package com.fabricadecoduri.shop_online.service;
+package com.lazaria.catalog_service.service;
 
-import com.fabricadecoduri.shop_online.model.Model;
-import com.fabricadecoduri.shop_online.repository.ModelRepository;
+import com.lazaria.catalog_service.model.Model;
+import com.lazaria.catalog_service.repository.ModelRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

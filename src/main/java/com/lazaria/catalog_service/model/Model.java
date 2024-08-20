@@ -1,6 +1,6 @@
-package com.fabricadecoduri.shop_online.model;
+package com.lazaria.catalog_service.model;
 
-import com.fabricadecoduri.shop_online.model.product_enum.Category;
+import com.lazaria.catalog_service.model.product_enum.Category;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

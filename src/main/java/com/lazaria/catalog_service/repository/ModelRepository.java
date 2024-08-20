@@ -1,6 +1,6 @@
-package com.fabricadecoduri.shop_online.repository;
+package com.lazaria.catalog_service.repository;
 
-import com.fabricadecoduri.shop_online.model.Model;
+import com.lazaria.catalog_service.model.Model;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
